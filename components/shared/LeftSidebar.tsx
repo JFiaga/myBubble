@@ -1,6 +1,6 @@
 "use client";
 import { sidebarLinks } from "@/constant";
-import { logout } from "@/public/assets";
+import logout  from "@/public/assets/logout.svg";
 import { SignOutButton, SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +38,7 @@ export default function LeftSidebar() {
       </div>
       <div className="mt-10 px-5">
         <SignedIn>
-          <SignOutButton signOutCallback={()=> router.push('/sign-in')}>
+          <SignOutButton signOutCallback={() => router.push("/sign-in")}>
             <div className=" flex cursor-pointer space-x-4 p-4">
               <Image src={logout} alt="logout" width={24} height={24} />
             </div>
