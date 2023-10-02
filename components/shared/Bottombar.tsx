@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
 import { sidebarLinks } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname , useRouter} from "next/navigation";
-
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Bottombar() {
   const pathname = usePathname();
- 
+
   return (
     <section className="bottombar">
       <div className="bottombar_container">

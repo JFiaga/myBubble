@@ -1,6 +1,7 @@
 import logout from "@/public/assets/logout.svg";
 import logo from "@/public/assets/logo.png";
 import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,23 +16,26 @@ const Topbar = () => {
         </p>
       </Link>
 
-      <div className="flex items-center space-x-1">
+      <div className="flex items-center space-x-1 text-light-1">
         <div className="block md:hidden">
           <SignedIn>
             <SignOutButton>
-              <div className=" flex cursor-pointer">
+              <div className=" flex cursor-pointer ">
                 <Image src={logout} alt="logout" width={24} height={24} />
               </div>
             </SignOutButton>
           </SignedIn>
         </div>
-        <OrganizationSwitcher
-          appearance={{
-            elements: {
-              organizationSwitcherTrigger: "py-2 px-4",
-            },
-          }}
+          <div className="text-light-1 font-bold bg-white">
+          <OrganizationSwitcher
+            appearance={{
+              baseTheme:dark,
+              elements:{
+                organizationSwitcherTrigger:"px-4 py-2"
+              }
+            }}
         />
+          </div>
       </div>
     </nav>
   );
